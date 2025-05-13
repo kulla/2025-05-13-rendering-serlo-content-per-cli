@@ -2,7 +2,7 @@
   "name": "2025-05-13-rendering-serlo-content-per-cli",
   "scripts": {
     "build": "tsc",
-    "start:script": "node dist/render.js",
+    "start:script": "node dist/render.js example-content.serlo",
     "start": "npm run build && npm run start:script"
   },
   "devDependencies": {

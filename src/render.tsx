@@ -1,3 +1,5 @@
+import { readFileSync } from "fs";
+
 import { JSDOM } from "jsdom";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -21,15 +23,15 @@ global.ResizeObserver = EmptyResizeObserver;
 
 const { SerloRenderer } = require("@serlo/editor");
 
-const serloContentAsJson = {
-  plugin: "rows",
-  state: [
-    {
-      plugin: "geogebra",
-      state: "nnrmthf4",
-    },
-  ],
-};
+const filePath = process.argv[2];
+
+if (!filePath) {
+  console.error("Please provide the path to the JSON file.");
+  process.exit(1);
+}
+
+const jsonString = readFileSync(filePath, "utf-8");
+const serloContentAsJson = JSON.parse(jsonString);
 
 const html = renderToStaticMarkup(
   <SerloRenderer
