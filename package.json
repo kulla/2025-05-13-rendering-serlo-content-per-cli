@@ -5,6 +5,7 @@
     "execute:script": "node dist/render.js example-content.serlo",
     "execute": "npm run build && npm run execute:script"
   },
+  "type": "module",
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
     "@types/node": "^22.15.17",

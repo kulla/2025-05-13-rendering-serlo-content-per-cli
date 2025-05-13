@@ -16,7 +16,7 @@ class EmptyResizeObserver {}
 // @ts-ignore
 global.ResizeObserver = EmptyResizeObserver;
 
-const { SerloRenderer } = require("@serlo/editor");
+const { SerloRenderer } = await import("@serlo/editor");
 
 const filePath = process.argv[2];
 
