@@ -9,6 +9,13 @@
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
     "@types/node": "^22.15.17",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@serlo/editor": "^0.26.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.3.1"
   }
 }
