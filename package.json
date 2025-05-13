@@ -2,8 +2,8 @@
   "name": "2025-05-13-rendering-serlo-content-per-cli",
   "scripts": {
     "build": "tsc",
-    "start:script": "node dist/render.js example-content.serlo",
-    "start": "npm run build && npm run start:script"
+    "execute:script": "node dist/render.js example-content.serlo",
+    "execute": "npm run build && npm run start:script"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
