@@ -1,6 +1,11 @@
 {
   "name": "2025-05-13-rendering-serlo-content-per-cli",
   "packageManager": "yarn@4.9.1",
+  "scripts": {
+    "build": "tsc",
+    "start:script": "node dist/render.js",
+    "start": "yarn build && yarn start:script"
+  },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
     "@types/node": "^22.15.17",
