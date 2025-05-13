@@ -2,6 +2,8 @@
   "name": "2025-05-13-rendering-serlo-content-per-cli",
   "packageManager": "yarn@4.9.1",
   "devDependencies": {
+    "@tsconfig/node22": "^22.0.1",
+    "@types/node": "^22.15.17",
     "typescript": "^5.8.3"
   }
 }
