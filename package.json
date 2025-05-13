@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@serlo/editor": "^0.26.0",
+    "@types/jsdom": "^21.1.7",
+    "jsdom": "^26.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.3.1"
   }
