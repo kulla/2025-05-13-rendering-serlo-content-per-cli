@@ -1,8 +1,7 @@
-import { readFileSync } from "fs";
-
+import { readFileSync, createWriteStream } from "fs";
 import { JSDOM } from "jsdom";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { renderToPipeableStream } from "react-dom/server";
 
 // Simulate a DOM environment
 const dom = new JSDOM("<!doctype html><html><body></body></html>");
@@ -17,10 +16,6 @@ class EmptyResizeObserver {}
 // @ts-ignore
 global.ResizeObserver = EmptyResizeObserver;
 
-/*global.navigator = {
-  userAgent: "node.js",
-} as any;*/
-
 const { SerloRenderer } = require("@serlo/editor");
 
 const filePath = process.argv[2];
@@ -33,12 +28,23 @@ if (!filePath) {
 const jsonString = readFileSync(filePath, "utf-8");
 const serloContentAsJson = JSON.parse(jsonString);
 
-const html = renderToStaticMarkup(
+const writableStream = createWriteStream("output.html");
+
+const { pipe } = renderToPipeableStream(
   <SerloRenderer
     state={serloContentAsJson}
     language="de"
     editorVariant="rendering-serlo-content-per-cli-prototype"
   />,
+  {
+    onShellReady() {
+      // Pipe the stream to the writable stream when ready
+      pipe(writableStream);
+    },
+    onError(error) {
+      console.error("An error occurred during rendering:", error);
+    },
+  },
 );
 
-console.log(html);
+console.log("Rendering started. Output will be written to 'output.html'.");

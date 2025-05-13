@@ -3,7 +3,7 @@
   "scripts": {
     "build": "tsc",
     "execute:script": "node dist/render.js example-content.serlo",
-    "execute": "npm run build && npm run start:script"
+    "execute": "npm run build && npm run execute:script"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
