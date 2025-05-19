@@ -1,6 +1,6 @@
 # 2025-05-13-rendering-serlo-content-per-cli
 
-## Setup && Execution
+## Setup & Execution
 
 1. Clone repository
 2. Run `npm install`
