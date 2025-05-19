@@ -11,6 +11,10 @@ One can also run `npm run execute` to combine the `build` and `execute:script` c
 
 After executing the script the rendered HTML can be found at `output.html` in the root directory of the repository.
 
+## CLI use via node
+
+To run the script using *node* only, run `node dist/render.js <file_name.serlo>` to save it to a file `output.html` or `node dist/render.js --stdout <file_name.serlo>` to print the output to the console.
+
 ## ToDos
 
 - `output.html` is actually not a valid HTML file. It only contains the body of the HTML file.
