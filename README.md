@@ -17,6 +17,6 @@ To run the script using *node* only, run `node dist/render.js <file_name.serlo>`
 
 ## ToDos
 
-- `output.html` is actually not a valid HTML file. It only contains the body of the HTML file.
-- The CSS for the serlo editor needs to be added as well (see `node_modules/@serlo/editor/dist/style.css`).
-- `hydrateRoot()` needs to be called in the browser to make the editor interactive (see https://18.react.dev/reference/react-dom/server/renderToPipeableStream#rendering-a-react-tree-as-html-to-a-nodejs-stream)
+- [x] `output.html` is actually not a valid HTML file. It only contains the body of the HTML file.
+- [x] The CSS for the serlo editor needs to be added as well (see `node_modules/@serlo/editor/dist/style.css`).
+- [] `hydrateRoot()` needs to be called in the browser to make the editor interactive (see https://18.react.dev/reference/react-dom/server/renderToPipeableStream#rendering-a-react-tree-as-html-to-a-nodejs-stream)
